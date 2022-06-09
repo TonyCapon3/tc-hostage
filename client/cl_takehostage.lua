@@ -137,6 +137,7 @@ end)
 
 RegisterNetEvent("TakeHostage:releaseHostage")
 AddEventHandler("TakeHostage:releaseHostage", function()
+	QBCore.Functions.Notify("You Got Free'd!!", 'success', 7500)
 	takeHostage.InProgress = false 
 	takeHostage.type = ""
 	DetachEntity(PlayerPedId(), true, false)
@@ -173,6 +174,7 @@ Citizen.CreateThread(function()
 		elseif takeHostage.type == "hostage" then
 			if not IsEntityPlayingAnim(PlayerPedId(), takeHostage.hostage.animDict, takeHostage.hostage.anim, 3) then
 				TaskPlayAnim(PlayerPedId(), takeHostage.hostage.animDict, takeHostage.hostage.anim, 8.0, -8.0, 100000, takeHostage.hostage.flag, 0, false, false, false)
+				QBCore.Functions.Notify('YOU HAVE BEEN TAKEN HOSTAGE!!', 'error', 2500)	
 			end
 		end
 		Wait(0)
@@ -188,7 +190,7 @@ Citizen.CreateThread(function()
 			DisableControlAction(0,58,true) -- disable weapon
 			DisableControlAction(0,21,true) -- disable sprint
 			DisablePlayerFiring(PlayerPedId(),true)
-			exports['qb-core']:DrawText("[G] TO RELEASE [H] TO KILL")             
+			exports['qb-core']:DrawText(Config.Text)             
 
 			if IsEntityDead(PlayerPedId()) then	
 				takeHostage.type = ""
