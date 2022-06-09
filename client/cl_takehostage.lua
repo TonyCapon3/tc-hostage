@@ -43,7 +43,7 @@ CreateThread(function()
             { 
                 type = "client",
                 event = "takehostage:target",
-                icon = "fas fa-circle",
+                icon = "fas fa-gun",
                 label = "Take Hostage",
             },
         },
