@@ -8,3 +8,7 @@ Use your third eye and look at any player, and take them hostage! The drawtext t
 qb-core (https://github.com/qbcore-framework/qb-core)
 
 qb-target (https://github.com/qbcore-framework/qb-target)
+
+# Credits For Takehostage
+
+https://github.com/rubbertoe98/FiveM-Scripts
